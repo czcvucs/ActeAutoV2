@@ -1,0 +1,29 @@
+import { NgModule } from '@angular/core';
+import { CommonModule } from '@angular/common';
+import { HttpClientModule } from '@angular/common/http';
+import { RouterModule } from '@angular/router';
+import { MatToolbarModule } from '@angular/material';
+import { LoginComponent } from './pages';
+import { MsAdalAngular6Module } from 'microsoft-adal-angular6';
+import { authConfig } from './config';
+import { SharedModule } from '../modules/shared/shared.module';
+import { UnauthorizedLayoutComponent } from './pages/unauthorized-layout/unauthorized-layout.component';
+import { LoginCallbackComponent } from './pages/login-callback/login-callback.component';
+
+@NgModule({
+  declarations: [
+    LoginComponent,
+    UnauthorizedLayoutComponent,
+    LoginCallbackComponent,
+  ],
+  imports: [
+    CommonModule,
+    HttpClientModule,
+    RouterModule,
+    MatToolbarModule,
+    SharedModule,
+    MsAdalAngular6Module.forRoot(authConfig),
+  ],
+  providers: [],
+})
+export class CoreModule { }

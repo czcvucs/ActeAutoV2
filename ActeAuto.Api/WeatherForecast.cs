@@ -1,6 +1,6 @@
 using System;
 
-namespace ActeAuto.Web
+namespace ActeAuto.Api
 {
     public class WeatherForecast
     {

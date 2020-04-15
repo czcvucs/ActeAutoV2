@@ -1,5 +1,11 @@
 .material-icons {
-    &:hover{
+    vertical-align: sub;
+}
+.menu-item {
+    &:hover {
         cursor: pointer;
     }
+}
+.logo{
+    max-height: 100%;
 }
