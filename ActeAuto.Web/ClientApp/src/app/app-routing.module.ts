@@ -15,9 +15,9 @@ const routes: Routes = [
     component: LoginCallbackComponent
   },
   {
-    path: '',
-    component: LayoutComponent,
-    canActivate: [AuthorizationGuard]
+    path: '', loadChildren: () =>
+      import('./layout/layout.module').then(m => m.LayoutModule),
+    canActivate: [AuthorizationGuard],
   }
 ];
 

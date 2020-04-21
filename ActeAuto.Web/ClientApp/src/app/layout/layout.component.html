@@ -6,22 +6,23 @@
 
     <button mat-button [matMenuTriggerFor]="userMenu">
       <span class="material-icons p5-r">account_box</span>
-      Username
+      {{userName}}
     </button>
     <mat-menu #userMenu="matMenu" xPosition="after">
-      <span mat-menu-item>Logout</span>
+      <span mat-menu-item (click)="logout()">Logout</span>
     </mat-menu>
   </mat-toolbar>
 
   <mat-sidenav-container class="example-sidenav-container" [style.marginTop.px]="mobileQuery.matches ? 56 : 0">
     <mat-sidenav #snav [mode]="mobileQuery.matches ? 'over' : 'side'" [fixedInViewport]="mobileQuery.matches"
       fixedTopGap="56">
-      <mat-nav-list *ngFor="let item of items">
-        <a mat-list-item routerLink=".">{{item}}</a>
+      <mat-nav-list *ngFor="let document of documents">
+        <a mat-list-item routerLink=".">{{document}}</a>
       </mat-nav-list>
     </mat-sidenav>
 
     <mat-sidenav-content>
+      <router-outlet></router-outlet>
     </mat-sidenav-content>
   </mat-sidenav-container>
 </div>

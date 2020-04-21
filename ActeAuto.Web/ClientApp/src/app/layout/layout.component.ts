@@ -1,8 +1,6 @@
-import { Component, OnDestroy, ChangeDetectorRef, OnInit } from '@angular/core';
+import { Component, OnDestroy, ChangeDetectorRef } from '@angular/core';
 import { MediaMatcher } from '@angular/cdk/layout';
-import { MsAdalAngular6Service, MsAdalAngular6Module } from 'microsoft-adal-angular6';
-import { Observable } from 'rxjs';
-import { OAuthService } from 'angular-oauth2-oidc';
+import { MsAdalAngular6Service } from 'microsoft-adal-angular6';
 
 @Component({
   selector: 'app-layout',
@@ -12,7 +10,7 @@ import { OAuthService } from 'angular-oauth2-oidc';
 export class LayoutComponent implements OnDestroy {
   mobileQuery: MediaQueryList;
 
-  items = [
+  documents = [
     'Impunere Primărie',
     'Fișă Înmatriculare',
     'Radiere primărie',
@@ -22,7 +20,6 @@ export class LayoutComponent implements OnDestroy {
     'Declarație Numere',
     'Procură / Delegație',
     'Traducere'];
-
   countries = [
     'România',
     'Anglia',
@@ -32,34 +29,22 @@ export class LayoutComponent implements OnDestroy {
     'Italia',
     'Olanda'
   ];
+
+  userName: string;
   private _mobileQueryListener: () => void;
 
   constructor(
     changeDetectorRef: ChangeDetectorRef,
     private authService: MsAdalAngular6Service,
-    private oauthService: OAuthService,
     media: MediaMatcher) {
     this.mobileQuery = media.matchMedia('(max-width: 600px)');
     this._mobileQueryListener = () => changeDetectorRef.detectChanges();
     this.mobileQuery.addListener(this._mobileQueryListener);
-    console.log(this.getAccessToken());
-    console.log(this.getLoggedInUser());
+    this.userName = this.authService.LoggedInUserName;
   }
 
   logout(): void {
     this.authService.logout();
-  }
-
-  getLoggedInUser(): any {
-    return this.authService.userInfo;
-  }
-
-  getAccessToken(): Observable<any> {
-    return this.authService.acquireToken('backend-api-uri');
-  }
-
-  getToken(): string {
-    return this.authService.accessToken;
   }
 
   ngOnDestroy(): void {

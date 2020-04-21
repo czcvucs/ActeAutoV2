@@ -4,24 +4,28 @@ import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatListModule } from '@angular/material/list';
 import { MatIconModule } from '@angular/material/icon';
-import { BrowserModule } from '@angular/platform-browser';
 import { MatMenuModule } from '@angular/material/menu';
 import { MatButtonModule } from '@angular/material/button';
-import { OAuthModule } from 'angular-oauth2-oidc';
+import { RouterModule } from '@angular/router';
+import { LayoutRoutingModule } from './layout-routing.module';
+import { WelcomeModule } from '../modules/welcome/welcome.module';
+import { CommonModule } from '@angular/common';
 
 @NgModule({
   declarations: [
     LayoutComponent,
   ],
   imports: [
-    BrowserModule,
+    CommonModule,
     MatToolbarModule,
     MatSidenavModule,
     MatListModule,
     MatIconModule,
     MatMenuModule,
     MatButtonModule,
-    OAuthModule.forRoot(),
+    RouterModule,
+    LayoutRoutingModule,
+    WelcomeModule
   ],
   providers: [],
   bootstrap: []
