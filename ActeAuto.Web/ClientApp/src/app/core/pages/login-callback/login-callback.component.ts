@@ -21,7 +21,8 @@ export class LoginCallbackComponent implements OnInit {
     console.log(this.authService.isAuthenticated);
     if (this.authService.isAuthenticated) {
       console.log(appUrl);
-      this.router.navigateByUrl(appUrl);
+      console.log('here');
+      this.router.navigate(['/']);
     } else {
       this.snackbar.openError('Login completion failed');
     }
