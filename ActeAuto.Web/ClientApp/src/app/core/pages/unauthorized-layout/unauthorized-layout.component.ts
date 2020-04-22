@@ -14,7 +14,6 @@ export class UnauthorizedLayoutComponent implements OnInit {
   ngOnInit() {
     this.videoTagRef.nativeElement.muted = true;
     this.videoTagRef.nativeElement.play();
-    console.log(window.location.origin);
   }
 
 }
