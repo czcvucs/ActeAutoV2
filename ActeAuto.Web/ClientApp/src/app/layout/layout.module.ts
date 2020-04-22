@@ -10,6 +10,7 @@ import { RouterModule } from '@angular/router';
 import { LayoutRoutingModule } from './layout-routing.module';
 import { WelcomeModule } from '../modules/welcome/welcome.module';
 import { CommonModule } from '@angular/common';
+import { ActeModule } from '../modules/acte/acte.module';
 
 @NgModule({
   declarations: [
@@ -25,7 +26,8 @@ import { CommonModule } from '@angular/common';
     MatButtonModule,
     RouterModule,
     LayoutRoutingModule,
-    WelcomeModule
+    WelcomeModule,
+    ActeModule
   ],
   providers: [],
   bootstrap: []

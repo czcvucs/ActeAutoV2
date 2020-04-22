@@ -1,7 +1,7 @@
 <div class="example-container" [class.example-is-mobile]="mobileQuery.matches">
   <mat-toolbar color="primary" class="example-toolbar">
     <span (click)="snav.toggle()" class="material-icons menu-item p5-r">menu</span>
-    <span>Acte Auto</span>
+    <span (click)="goToActe()" class="menu-item">Acte Auto</span>
     <span class="fill-remaining-space"></span>
 
     <button mat-button [matMenuTriggerFor]="userMenu">
@@ -17,7 +17,7 @@
     <mat-sidenav #snav [mode]="mobileQuery.matches ? 'over' : 'side'" [fixedInViewport]="mobileQuery.matches"
       fixedTopGap="56">
       <mat-nav-list *ngFor="let document of documents">
-        <a mat-list-item routerLink=".">{{document}}</a>
+        <a mat-list-item routerLink="acte">{{document}}</a>
       </mat-nav-list>
     </mat-sidenav>
 

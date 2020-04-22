@@ -1,6 +1,7 @@
 import { Component, OnDestroy, ChangeDetectorRef } from '@angular/core';
 import { MediaMatcher } from '@angular/cdk/layout';
 import { MsAdalAngular6Service } from 'microsoft-adal-angular6';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-layout',
@@ -36,6 +37,7 @@ export class LayoutComponent implements OnDestroy {
   constructor(
     changeDetectorRef: ChangeDetectorRef,
     private authService: MsAdalAngular6Service,
+    private router: Router,
     media: MediaMatcher) {
     this.mobileQuery = media.matchMedia('(max-width: 600px)');
     this._mobileQueryListener = () => changeDetectorRef.detectChanges();
@@ -45,6 +47,10 @@ export class LayoutComponent implements OnDestroy {
 
   logout(): void {
     this.authService.logout();
+  }
+
+  goToHome(): void {
+    this.router.navigate(['']);
   }
 
   ngOnDestroy(): void {
