@@ -18,11 +18,10 @@ export class LoginCallbackComponent implements OnInit {
   ) { }
 
   ngOnInit() {
-    console.log(this.authService.isAuthenticated);
     if (this.authService.isAuthenticated) {
-      console.log(appUrl);
-      console.log('here');
-      this.router.navigate(['/welcome']);
+      this.snackbar.openSuccess('Login complete');
+      location.replace(appUrl);
+      this.router.navigate(['']);
     } else {
       this.snackbar.openError('Login completion failed');
     }
