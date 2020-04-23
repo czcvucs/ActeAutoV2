@@ -21,7 +21,7 @@ export class LoginCallbackComponent implements OnInit {
 
   ngOnInit() {
     if (this.authService.isAuthenticated) {
-      location.replace(localUrl);
+      location.replace(appUrl);
     } else {
       this.isLoading = false;
       this.snackbar.openError('Login completion failed');

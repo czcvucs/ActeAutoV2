@@ -1,5 +1,5 @@
 export const appUrl = 'https://acteauto.azurewebsites.net';
-export const localUrl = 'http://localhost:4200';
+//export const appUrl ='http://localhost:4200';
 
 export const authConfig = {
     tenant: '95898435-bd2b-4173-991f-2f694f01ffa1',
