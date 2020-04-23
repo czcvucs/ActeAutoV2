@@ -1,7 +1,8 @@
-import { WelcomeComponent } from "./pages";
-import { CommonModule } from "@angular/common";
-import { RouterModule } from "@angular/router";
-import { NgModule } from "@angular/core";
+import { WelcomeComponent } from './pages';
+import { CommonModule } from '@angular/common';
+import { RouterModule } from '@angular/router';
+import { NgModule } from '@angular/core';
+import { MatLoadingModule } from '../shared/utils/mat-loading/mat-loading.module';
 
 @NgModule({
     declarations: [
@@ -9,7 +10,8 @@ import { NgModule } from "@angular/core";
     ],
     imports: [
         CommonModule,
-        RouterModule
+        RouterModule,
+        MatLoadingModule
     ],
     providers: [],
 })

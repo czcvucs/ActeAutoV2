@@ -1,4 +1,7 @@
 <app-unauthorized-layout>
-    <mat-toolbar class="m10-b" color="warn">Failed to login. Please contact support for assistance.</mat-toolbar>
-    <div class="login-button" (click)="goToLogin()"> <span>Try again</span> </div>
+    <app-mat-loading *ngIf="isLoading; else content"></app-mat-loading>
+    <ng-template #content>
+        <mat-toolbar class="m10-b" color="warn">Failed to login. Please contact support for assistance.</mat-toolbar>
+        <div class="login-button" (click)="goToLogin()"> <span>Try again</span> </div>
+    </ng-template> 
 </app-unauthorized-layout>

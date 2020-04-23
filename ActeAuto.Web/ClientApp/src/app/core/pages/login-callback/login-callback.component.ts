@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { SimpleSnackBarService } from 'src/app/modules/shared';
 import { MsAdalAngular6Service } from 'microsoft-adal-angular6';
-import { appUrl } from '../../config';
+import { appUrl, localUrl } from '../../config';
 
 @Component({
   selector: 'app-login-callback',
@@ -10,6 +10,8 @@ import { appUrl } from '../../config';
   styleUrls: ['./login-callback.component.scss']
 })
 export class LoginCallbackComponent implements OnInit {
+
+  isLoading = true;
 
   constructor(
     private router: Router,
@@ -19,10 +21,9 @@ export class LoginCallbackComponent implements OnInit {
 
   ngOnInit() {
     if (this.authService.isAuthenticated) {
-      this.snackbar.openSuccess('Login complete');
-      location.replace(appUrl);
-      this.router.navigate(['']);
+      location.replace(localUrl);
     } else {
+      this.isLoading = false;
       this.snackbar.openError('Login completion failed');
     }
   }
