@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { SimpleSnackBarService } from 'src/app/modules/shared';
 import { MsAdalAngular6Service } from 'microsoft-adal-angular6';
-import { appUrl, localUrl } from '../../config';
+import { appUrl } from '../../config';
 
 @Component({
   selector: 'app-login-callback',
