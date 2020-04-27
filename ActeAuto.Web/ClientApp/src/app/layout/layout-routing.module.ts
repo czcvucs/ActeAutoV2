@@ -3,6 +3,7 @@ import { NgModule } from '@angular/core';
 import { WelcomeComponent } from '../modules/welcome/pages';
 import { LayoutComponent } from './layout.component';
 import { ActeComponent } from '../modules/acte/pages';
+import { CanDeactivateGuard } from '../modules/shared/guards';
 
 const routes: Routes = [
   {
@@ -15,7 +16,8 @@ const routes: Routes = [
       },
       {
         path: 'acte',
-        component: ActeComponent
+        component: ActeComponent,
+       // canDeactivate: [CanDeactivateGuard]
       }
     ]
   }

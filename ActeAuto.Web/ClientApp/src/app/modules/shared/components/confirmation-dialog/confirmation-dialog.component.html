@@ -1,0 +1,11 @@
+<h1 mat-dialog-title>
+  <i class="fas fa-exclamation-triangle" *ngIf="isWarning"></i>
+  <i class="fas fa-info-circle" *ngIf="!isWarning"></i> <span [innerHtml]="title"></span>
+</h1>
+<mat-dialog-content>
+  <p [innerHtml]="messageText"></p>
+</mat-dialog-content>
+<mat-dialog-actions class="justify-content-end">
+  <button mat-button mat-raised-button color="primary" (click)="onConfirm()">{{ okBtnText }}</button>
+  <button mat-button mat-raised-button (click)="onDecline()">{{ cancelBtnText }}</button>
+</mat-dialog-actions>

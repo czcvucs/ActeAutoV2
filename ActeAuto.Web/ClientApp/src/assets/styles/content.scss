@@ -6,6 +6,22 @@
         cursor: pointer;
     }
 }
-.logo{
+.logo {
     max-height: 100%;
 }
+.card-content {
+    margin: 20px;
+}
+.mat-card-input {
+    margin: 5px;
+
+    &.small-input {
+        width: 60px;
+    }
+
+    &.medium-input {
+        width: 90px;
+    }
+}
+
+

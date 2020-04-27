@@ -1,16 +1,18 @@
-import { Component, OnDestroy, ChangeDetectorRef } from '@angular/core';
+import { Component, OnDestroy, ChangeDetectorRef, OnInit, Output, EventEmitter } from '@angular/core';
 import { MediaMatcher } from '@angular/cdk/layout';
 import { MsAdalAngular6Service } from 'microsoft-adal-angular6';
 import { Router } from '@angular/router';
+import { SelectedDocsService } from '../modules/shared';
 
 @Component({
   selector: 'app-layout',
   templateUrl: './layout.component.html',
   styleUrls: ['./layout.component.scss']
 })
-export class LayoutComponent implements OnDestroy {
+export class LayoutComponent implements OnInit, OnDestroy {
   mobileQuery: MediaQueryList;
 
+  selectedOptions = [];
   documents = [
     'Impunere Primărie',
     'Fișă Înmatriculare',
@@ -38,11 +40,29 @@ export class LayoutComponent implements OnDestroy {
     changeDetectorRef: ChangeDetectorRef,
     private authService: MsAdalAngular6Service,
     private router: Router,
+    private selectedDocsService: SelectedDocsService,
     media: MediaMatcher) {
     this.mobileQuery = media.matchMedia('(max-width: 600px)');
     this._mobileQueryListener = () => changeDetectorRef.detectChanges();
     this.mobileQuery.addListener(this._mobileQueryListener);
     this.userName = this.authService.LoggedInUserName;
+  }
+
+  ngOnInit() {
+    this.checkPage();
+  }
+
+  onNgModelChange() {
+    this.checkPage();
+  }
+
+  checkPage() {
+    if (this.selectedOptions.length > 0) {
+      this.selectedDocsService.setCurrentSelected(this.selectedOptions);
+      this.router.navigate(['/acte']);
+    } else {
+      this.router.navigate(['']);
+    }
   }
 
   logout(): void {

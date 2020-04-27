@@ -1,13 +1,17 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { MatSnackBarModule } from '@angular/material';
+import { MatSnackBarModule, MatDialogModule, MatButtonModule } from '@angular/material';
+import { ConfirmationDialogComponent } from './components';
 
 @NgModule({
   declarations: [
+    ConfirmationDialogComponent
   ],
   imports: [
     CommonModule,
-    MatSnackBarModule
+    MatSnackBarModule,
+    MatDialogModule,
+    MatButtonModule
   ],
   providers: [],
 })

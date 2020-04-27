@@ -1,0 +1,14 @@
+<p class="info">
+    <mat-form-field class="mat-card-input" appearance="outline" *ngIf="selectedDocs.includes('Impunere Primărie')">
+        <mat-label>Nume</mat-label>
+        <input #nume matInput (input)="nume.value=$event.target.value.toUpperCase()" placeholder="Nume">
+    </mat-form-field>
+    <mat-form-field class="mat-card-input" appearance="outline">
+        <mat-label>Email</mat-label>
+        <input matInput placeholder="Email">
+    </mat-form-field>
+    <mat-form-field class="mat-card-input" appearance="outline">
+        <mat-label>Telefon</mat-label>
+        <input matInput placeholder="Telefon">
+    </mat-form-field>
+</p>

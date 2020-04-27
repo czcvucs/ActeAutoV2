@@ -1,0 +1,101 @@
+<mat-card class="card-content">
+    <mat-card-header>
+        <mat-card-title>Vehicul</mat-card-title>
+    </mat-card-header>
+    <mat-card-content>
+        <p>
+            <mat-form-field class="mat-card-input" appearance="outline">
+                <mat-label>Marca</mat-label>
+                <input matInput placeholder="Marca">
+            </mat-form-field>
+            <mat-form-field class="mat-card-input" appearance="outline">
+                <mat-label>Tip</mat-label>
+                <input matInput placeholder="Tip">
+            </mat-form-field>
+            <mat-form-field class="mat-card-input" appearance="outline">
+                <mat-label>Nr. Inmatriculare</mat-label>
+                <input matInput placeholder="Nr. Inmatriculare">
+            </mat-form-field>
+            <mat-form-field class="mat-card-input" appearance="outline">
+                <mat-label>Serie sasiu</mat-label>
+                <input matInput placeholder="Serie sasiu">
+            </mat-form-field>
+            <mat-form-field class="mat-card-input" appearance="outline">
+                <mat-label>Cilindre</mat-label>
+                <input matInput placeholder="Cilindre">
+            </mat-form-field>
+            <mat-form-field class="mat-card-input" appearance="outline">
+                <mat-label>Carburant</mat-label>
+                <input matInput placeholder="Carburant">
+            </mat-form-field>
+            <mat-form-field class="mat-card-input" appearance="outline">
+                <mat-label>Serie motor</mat-label>
+                <input matInput placeholder="Serie motor">
+            </mat-form-field>
+        </p>
+        <p>
+            <mat-form-field class="mat-card-input" appearance="outline">
+                <mat-label>Categorie</mat-label>
+                <mat-select>
+                    <mat-option *ngFor="let categorie of categori" [value]="categorie">
+                        {{categorie}}
+                    </mat-option>
+                </mat-select>
+            </mat-form-field>
+            <mat-form-field class="mat-card-input" appearance="outline">
+                <mat-label>Fabricatie</mat-label>
+                <input matInput placeholder="Fabricatie">
+            </mat-form-field>
+            <mat-form-field class="mat-card-input" appearance="outline">
+                <mat-label>Data inmatriculare</mat-label>
+                <input matInput [matDatepicker]="dataInmatriculare">
+                <mat-datepicker-toggle matSuffix [for]="dataInmatriculare"></mat-datepicker-toggle>
+                <mat-datepicker #dataInmatriculare></mat-datepicker>
+            </mat-form-field>
+            <mat-form-field class="mat-card-input" appearance="outline">
+                <mat-label>Culoare</mat-label>
+                <input matInput placeholder="Culoare">
+            </mat-form-field>
+            <mat-form-field class="mat-card-input" appearance="outline">
+                <mat-label>Serie carte</mat-label>
+                <input matInput placeholder="Serie carte">
+            </mat-form-field>
+            <mat-form-field class="mat-card-input" appearance="outline">
+                <mat-label>Numar talon</mat-label>
+                <input matInput placeholder="Numar talon">
+            </mat-form-field>
+        </p>
+        <p>
+            <mat-form-field class="mat-card-input" appearance="outline">
+                <mat-label>Moneda</mat-label>
+                <mat-select>
+                    <mat-option *ngFor="let moneda of monede" [value]="moneda">
+                        {{moneda}}
+                    </mat-option>
+                </mat-select>
+            </mat-form-field>
+            <mat-form-field class="mat-card-input" appearance="outline">
+                <mat-label>Pret litere</mat-label>
+                <input matInput placeholder="Pret litere">
+            </mat-form-field>
+            <mat-form-field class="mat-card-input" appearance="outline">
+                <mat-label>Data vanzarii</mat-label>
+                <input matInput [matDatepicker]="dataVanzare">
+                <mat-datepicker-toggle matSuffix [for]="dataVanzare"></mat-datepicker-toggle>
+                <mat-datepicker #dataVanzare></mat-datepicker>
+            </mat-form-field>
+            <mat-form-field class="mat-card-input" appearance="outline">
+                <mat-label>Locul vanzarii</mat-label>
+                <input matInput placeholder="Loc vanzare">
+            </mat-form-field>
+            <mat-form-field class="mat-card-input" appearance="outline">
+                <mat-label>Kilometri</mat-label>
+                <input matInput placeholder="Kilometri">
+            </mat-form-field>
+            <mat-form-field class="mat-card-input" appearance="outline">
+                <mat-label>Platforma</mat-label>
+                <input matInput placeholder="Platforma">
+            </mat-form-field>
+        </p>
+    </mat-card-content>
+</mat-card>

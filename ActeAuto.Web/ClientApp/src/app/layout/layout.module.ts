@@ -11,6 +11,7 @@ import { LayoutRoutingModule } from './layout-routing.module';
 import { WelcomeModule } from '../modules/welcome/welcome.module';
 import { CommonModule } from '@angular/common';
 import { ActeModule } from '../modules/acte/acte.module';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -18,6 +19,7 @@ import { ActeModule } from '../modules/acte/acte.module';
   ],
   imports: [
     CommonModule,
+    FormsModule,
     MatToolbarModule,
     MatSidenavModule,
     MatListModule,
