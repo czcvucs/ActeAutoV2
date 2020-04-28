@@ -33,6 +33,7 @@ export class LayoutComponent implements OnInit, OnDestroy {
     'Olanda'
   ];
 
+  isLoading = false;
   userName: string;
   private _mobileQueryListener: () => void;
 
@@ -57,6 +58,7 @@ export class LayoutComponent implements OnInit, OnDestroy {
   }
 
   checkPage() {
+    this.isLoading = true;
     if (this.selectedOptions.length > 0) {
       this.selectedDocsService.setCurrentSelected(this.selectedOptions);
       this.router.navigate(['/acte']);

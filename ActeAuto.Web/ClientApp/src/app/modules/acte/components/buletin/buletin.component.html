@@ -1,7 +1,7 @@
 <p class="buletin">
     <mat-form-field class="mat-card-input" appearance="outline">
         <mat-label>CNP / CUI</mat-label>
-        <input matInput placeholder="CNP / CUI">
+        <input matInput placeholder="CNP / CUI" (keypress)="onlyNumbers($event)">
     </mat-form-field>
     <mat-form-field class="mat-card-input medium-input" appearance="outline">
         <mat-label>Serie CI</mat-label>
@@ -9,7 +9,7 @@
     </mat-form-field>
     <mat-form-field class="mat-card-input medium-input" appearance="outline">
         <mat-label>Numar CI</mat-label>
-        <input matInput placeholder="Numar CI">
+        <input matInput placeholder="Numar CI" (keypress)="onlyNumbers($event)">
     </mat-form-field>
     <mat-form-field class="mat-card-input" appearance="outline">
         <mat-label>Emis de</mat-label>

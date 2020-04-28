@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { InputValidator } from 'src/app/modules/shared';
 
 @Component({
   selector: 'app-buletin',
@@ -12,4 +13,7 @@ export class BuletinComponent implements OnInit {
   ngOnInit() {
   }
 
+  onlyNumbers($event): boolean {
+    return InputValidator.isNumericValue($event);
+  }
 }

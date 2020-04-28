@@ -3,7 +3,7 @@ import { NgModule } from '@angular/core';
 import { ActeComponent } from './pages';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatCardModule } from '@angular/material/card';
-import { MatInputModule, MatSelectModule, MatDatepickerModule, MatNativeDateModule, MAT_DATE_LOCALE } from '@angular/material';
+import { MatInputModule, MatSelectModule, MatDatepickerModule, MatNativeDateModule, MAT_DATE_LOCALE, MatIconModule, MatButtonModule } from '@angular/material';
 import { SharedModule } from '../shared/shared.module';
 import { ConfirmationDialogComponent } from '../shared';
 import { CumparatorComponent } from './components/cumparator/cumparator.component';
@@ -31,7 +31,9 @@ import { BuletinComponent } from './components/buletin/buletin.component';
         SharedModule,
         MatSelectModule,
         MatDatepickerModule,
-        MatNativeDateModule
+        MatNativeDateModule,
+        MatIconModule,
+        MatButtonModule
     ],
     providers: [
         { provide: MAT_DATE_LOCALE, useValue: 'en-GB' }

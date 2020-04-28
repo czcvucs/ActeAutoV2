@@ -29,7 +29,7 @@ import { FormsModule } from '@angular/forms';
     RouterModule,
     LayoutRoutingModule,
     WelcomeModule,
-    ActeModule
+    ActeModule,
   ],
   providers: [],
   bootstrap: []
