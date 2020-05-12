@@ -1,0 +1,23 @@
+<h1 mat-dialog-title>
+    <span [innerHtml]="title"></span>
+</h1>
+<hr>
+<mat-dialog-content>
+    <mat-card class="card-content">
+        <div>
+            Imputernicire Primarie
+            <mat-form-field class="m10-l nr-input">
+                <mat-label>Nr</mat-label>
+                <mat-select>
+                    <mat-option *ngFor="let option of options" [value]="option">
+                        {{option}}
+                    </mat-option>
+                </mat-select>
+            </mat-form-field>
+        </div>
+    </mat-card>
+</mat-dialog-content>
+<mat-dialog-actions>
+    <button mat-button mat-raised-button class="printBtn m10-t" color="primary"
+        (click)="print()">{{ printBtn }}</button>
+</mat-dialog-actions>

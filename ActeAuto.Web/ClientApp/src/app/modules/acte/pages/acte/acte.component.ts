@@ -1,27 +1,107 @@
 import { Component, OnInit, AfterViewInit } from '@angular/core';
-import { ActeService } from '../../acte.service';
 import { MatDialog, MatDialogRef } from '@angular/material';
-import { ConfirmationDialogComponent, SelectedDocsService } from 'src/app/modules/shared';
+import { ConfirmationDialogComponent, SelectedDocsService, SimpleSnackBarService, PrintDialogComponent } from 'src/app/modules/shared';
+import { FormGroup, FormControl, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-acte',
   templateUrl: './acte.component.html',
   styleUrls: ['./acte.component.scss']
 })
-export class ActeComponent implements OnInit, AfterViewInit {
+export class ActeComponent implements OnInit {
 
   confirmationDialog: MatDialogRef<ConfirmationDialogComponent>;
+  printForm: FormGroup;
 
   constructor(
-    private acteService: ActeService,
+    private snackbar: SimpleSnackBarService,
     public dialog: MatDialog
   ) { }
 
-  ngAfterViewInit(): void {
-  }
-
   ngOnInit() {
-    //this.acteService.Get().subscribe(x => console.log(x));
+    this.printForm = new FormGroup({
+      cumparator: new FormGroup({
+        nume: new FormControl(''),
+        email: new FormControl(''),
+        telefon: new FormControl(''),
+        adresa: new FormGroup({
+          judet: new FormControl(''),
+          localitate: new FormControl(''),
+          strada: new FormControl(''),
+          numar: new FormControl(''),
+          bloc: new FormControl(''),
+          scara: new FormControl(''),
+          etaj: new FormControl(''),
+          apartament: new FormControl(''),
+        }),
+        buletin: new FormGroup({
+          cnp: new FormControl(''),
+          serie: new FormControl(''),
+          numar: new FormControl(''),
+          emisDe: new FormControl(''),
+          dataEmitere: new FormControl(''),
+          dataNastere: new FormControl(''),
+          locNastere: new FormControl(''),
+        })
+      }),
+      vehicul: new FormGroup({
+        marca: new FormControl(''),
+        tip: new FormControl(''),
+        nrInm: new FormControl(''),
+        serieSasiu: new FormControl(''),
+        cilindre: new FormControl(''),
+        carburant: new FormControl(''),
+        serieMotor: new FormControl(''),
+        categorie: new FormControl(''),
+        fabricatie: new FormControl(''),
+        dataInmatriculare: new FormControl(''),
+        culoare: new FormControl(''),
+        serieCarte: new FormControl(''),
+        numarTalon: new FormControl(''),
+        moneda: new FormControl(''),
+        pretLitere: new FormControl(''),
+        dataVanzare: new FormControl(''),
+        locVanzare: new FormControl(''),
+        kilometri: new FormControl(''),
+        platforma: new FormControl(''),
+      }),
+      vanzator: new FormGroup({
+        nume: new FormControl(''),
+        email: new FormControl(''),
+        telefon: new FormControl(''),
+        adresa: new FormGroup({
+          judet: new FormControl(''),
+          localitate: new FormControl(''),
+          strada: new FormControl(''),
+          numar: new FormControl(''),
+          bloc: new FormControl(''),
+          scara: new FormControl(''),
+          etaj: new FormControl(''),
+          apartament: new FormControl(''),
+          adresaCustom: new FormControl(''),
+        }),
+        buletin: new FormGroup({
+          cnp: new FormControl(''),
+          serie: new FormControl(''),
+          numar: new FormControl(''),
+          emisDe: new FormControl(''),
+          dataEmitere: new FormControl(''),
+          dataNastere: new FormControl(''),
+          locNastere: new FormControl(''),
+        })
+      })
+    });
   }
 
+  printDocument(formValues): void {
+    const dialogRef = this.dialog.open(PrintDialogComponent, {
+      autoFocus: false
+    });
+    if (this.printForm.valid) {
+      console.log(formValues);
+    } else {
+      this.snackbar.openError('Formularul este invalid');
+      console.log(formValues);
+    }
+  }
 }

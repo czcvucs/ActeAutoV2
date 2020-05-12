@@ -14,8 +14,8 @@ export class SimpleSnackBarService {
 
       config.duration = duration || 4000;
       config.panelClass = panelClass || ['snackBar-default'];
-      config.verticalPosition = positionVertical || 'top';
-      config.horizontalPosition = positionHorizontal || 'right';
+      config.verticalPosition = positionVertical || 'bottom';
+      config.horizontalPosition = positionHorizontal || 'center';
 
       this.snackBar.open(message, null, config);
   }

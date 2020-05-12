@@ -1,20 +1,20 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { InfoComponent } from './info.component';
+import { PrintDialogComponent } from './print-dialog.component';
 
-describe('InfoComponent', () => {
-  let component: InfoComponent;
-  let fixture: ComponentFixture<InfoComponent>;
+describe('PringDialogComponent', () => {
+  let component: PrintDialogComponent;
+  let fixture: ComponentFixture<PrintDialogComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ InfoComponent ]
+      declarations: [ PrintDialogComponent ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(InfoComponent);
+    fixture = TestBed.createComponent(PrintDialogComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

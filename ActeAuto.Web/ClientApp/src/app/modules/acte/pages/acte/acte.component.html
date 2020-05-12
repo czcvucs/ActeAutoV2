@@ -1,6 +1,8 @@
-<button mat-button mat-raised-button class="print-button" color="accent">
-    <span class="material-icons p5-r print-icon">print</span>
-</button>
-<app-cumparator></app-cumparator>
-<app-vehicul></app-vehicul>
-<app-vanzator></app-vanzator>
+<form [formGroup]="printForm" (ngSubmit)="printDocument(printForm.value)">
+    <app-cumparator [form]="printForm.controls.cumparator"></app-cumparator>
+    <app-vehicul [form]="printForm.controls.vehicul"></app-vehicul>
+    <app-vanzator [form]="printForm.controls.vanzator"></app-vanzator>
+    <button mat-button mat-raised-button class="print-button" color="accent">
+        <span class="material-icons p5-r print-icon">print</span>
+    </button>
+</form>

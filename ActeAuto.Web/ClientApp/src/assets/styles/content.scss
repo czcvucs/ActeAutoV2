@@ -24,6 +24,31 @@
         width: 90px;
     }
 }
-input{
+input {
     text-transform: uppercase;
+}
+
+// Angular Material snackBar
+
+.snackBar-default {
+    white-space: pre-wrap;
+    color: $snackBar-default-color !important;
+}
+
+.snackBar-success {
+    white-space: pre-wrap;
+    background-color: $snackBar-success-color !important;
+    color: $snackBar-default-color;
+}
+
+.snackBar-warning {
+    white-space: pre-wrap;
+    background-color: $snackBar-warning-color !important;
+    color: $snackBar-default-color !important;
+}
+
+.snackBar-error {
+    white-space: pre-wrap;
+    background-color: $snackBar-error-color !important;
+    color: $snackBar-default-color;
 }

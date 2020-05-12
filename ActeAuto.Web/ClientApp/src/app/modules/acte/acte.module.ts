@@ -3,15 +3,22 @@ import { NgModule } from '@angular/core';
 import { ActeComponent } from './pages';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatCardModule } from '@angular/material/card';
-import { MatInputModule, MatSelectModule, MatDatepickerModule, MatNativeDateModule, MAT_DATE_LOCALE, MatIconModule, MatButtonModule } from '@angular/material';
+import {
+    MatInputModule,
+    MatSelectModule,
+    MatDatepickerModule,
+    MatNativeDateModule,
+    MAT_DATE_LOCALE,
+    MatIconModule,
+    MatButtonModule,
+    MatSnackBarModule
+} from '@angular/material';
 import { SharedModule } from '../shared/shared.module';
-import { ConfirmationDialogComponent } from '../shared';
+import { ConfirmationDialogComponent, PrintDialogComponent } from '../shared';
 import { CumparatorComponent } from './components/cumparator/cumparator.component';
 import { VehiculComponent } from './components/vehicul/vehicul.component';
 import { VanzatorComponent } from './components/vanzator/vanzator.component';
-import { InfoComponent } from './components/info/info.component';
-import { AdresaComponent } from './components/adresa/adresa.component';
-import { BuletinComponent } from './components/buletin/buletin.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
     declarations: [
@@ -19,9 +26,6 @@ import { BuletinComponent } from './components/buletin/buletin.component';
         CumparatorComponent,
         VehiculComponent,
         VanzatorComponent,
-        InfoComponent,
-        AdresaComponent,
-        BuletinComponent,
     ],
     imports: [
         CommonModule,
@@ -33,11 +37,14 @@ import { BuletinComponent } from './components/buletin/buletin.component';
         MatDatepickerModule,
         MatNativeDateModule,
         MatIconModule,
-        MatButtonModule
+        MatButtonModule,
+        FormsModule,
+        ReactiveFormsModule,
+        MatSnackBarModule
     ],
     providers: [
         { provide: MAT_DATE_LOCALE, useValue: 'en-GB' }
     ],
-    entryComponents: [ConfirmationDialogComponent],
+    entryComponents: [ConfirmationDialogComponent, PrintDialogComponent],
 })
 export class ActeModule { }

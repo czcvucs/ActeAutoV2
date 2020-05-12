@@ -2,6 +2,7 @@
 
 html, body { height: 100%; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+@import "./assets//styles/variables.scss";
 @import "./assets/styles/padding.scss";
 @import "./assets/styles/content.scss";
 @import "./assets//styles//login.scss";

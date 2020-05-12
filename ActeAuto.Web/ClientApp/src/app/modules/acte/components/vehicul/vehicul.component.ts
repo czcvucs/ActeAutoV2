@@ -1,11 +1,16 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input } from '@angular/core';
+import { FieldsBase } from '../fields-base';
+import { SelectedDocsService } from 'src/app/modules/shared';
+import { FormGroup } from '@angular/forms';
 
 @Component({
   selector: 'app-vehicul',
   templateUrl: './vehicul.component.html',
   styleUrls: ['./vehicul.component.scss']
 })
-export class VehiculComponent implements OnInit {
+export class VehiculComponent extends FieldsBase {
+
+  @Input() form: FormGroup;
 
   categori = [
     'Autoturism',
@@ -17,9 +22,8 @@ export class VehiculComponent implements OnInit {
     'Lei',
     'Euro'
   ];
-  constructor() { }
 
-  ngOnInit() {
+  constructor(protected selectedDocsService: SelectedDocsService) {
+    super(selectedDocsService);
   }
-
 }
