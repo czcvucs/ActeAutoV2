@@ -5,25 +5,39 @@
     <mat-card-content>
         <div [formGroup]="form">
             <div class="info">
-                <mat-form-field class="mat-card-input" appearance="outline"
-                    *ngIf="checkSelectedDocs(['Impunere Primărie', 'Fișă Înmatriculare'])">
+                <mat-form-field class="mat-card-input" appearance="outline" *ngIf="checkSelectedDocs([
+                    'impunere-primarie',
+                    'fisa-inmatriculare',
+                    'radiere-primarie',
+                    'certificat-tva',
+                    'certificat-radiere',
+                    'cerere-spcrciv',
+                    'declaratie-numere',
+                    'procura-delegatie'])">
                     <mat-label>Nume</mat-label>
                     <input matInput placeholder="Nume" formControlName="nume">
                 </mat-form-field>
                 <mat-form-field class="mat-card-input" appearance="outline"
-                    *ngIf="checkSelectedDocs(['Impunere Primărie'])">
+                    *ngIf="checkSelectedDocs(['impunere-primarie'])">
                     <mat-label>Email</mat-label>
                     <input matInput type="email" placeholder="Email" formControlName="email">
                 </mat-form-field>
                 <mat-form-field class="mat-card-input" appearance="outline"
-                    *ngIf="checkSelectedDocs(['Impunere Primărie'])">
+                    *ngIf="checkSelectedDocs(['impunere-primarie'])">
                     <mat-label>Telefon</mat-label>
                     <input matInput placeholder="Telefon" formControlName="telefon" (keypress)="onlyNumbers($event)">
                 </mat-form-field>
             </div>
             <div class="adresa" formGroupName="adresa">
-                <mat-form-field class="mat-card-input" appearance="outline"
-                    *ngIf="checkSelectedDocs(['Impunere Primărie', 'Fișă Înmatriculare'])">
+                <mat-form-field class="mat-card-input" appearance="outline" *ngIf="checkSelectedDocs([
+                    'impunere-primarie',
+                    'fisa-inmatriculare',
+                    'radiere-primarie',
+                    'certificat-tva',
+                    'certificat-radiere',
+                    'cerere-spcrciv',
+                    'declaratie-numere',
+                    'procura-delegatie'])">
                     <mat-label>Județ</mat-label>
                     <mat-select formControlName="judet">
                         <mat-option *ngFor="let judet of judete" [value]="judet">
@@ -31,8 +45,15 @@
                         </mat-option>
                     </mat-select>
                 </mat-form-field>
-                <mat-form-field class="mat-card-input" appearance="outline"
-                    *ngIf="checkSelectedDocs(['Impunere Primărie', 'Fișă Înmatriculare'])">
+                <mat-form-field class="mat-card-input" appearance="outline" *ngIf="checkSelectedDocs([
+                    'impunere-primarie',
+                    'fisa-inmatriculare',
+                    'radiere-primarie',
+                    'certificat-tva',
+                    'certificat-radiere',
+                    'cerere-spcrciv',
+                    'declaratie-numere',
+                    'procura-delegatie'])">
                     <mat-label>Localitate</mat-label>
                     <mat-select formControlName="localitate">
                         <mat-option *ngFor="let localitate of localitati" [value]="localitate">
@@ -40,74 +61,129 @@
                         </mat-option>
                     </mat-select>
                 </mat-form-field>
-                <mat-form-field class="mat-card-input" appearance="outline"
-                    *ngIf="checkSelectedDocs(['Impunere Primărie', 'Fișă Înmatriculare'])">
+                <mat-form-field class="mat-card-input" appearance="outline" *ngIf="checkSelectedDocs([
+                    'impunere-primarie',
+                    'fisa-inmatriculare',
+                    'radiere-primarie',
+                    'certificat-tva',
+                    'certificat-radiere',
+                    'cerere-spcrciv',
+                    'declaratie-numere',
+                    'procura-delegatie'])">
                     <mat-label>Strada</mat-label>
                     <input matInput placeholder="Strada" formControlName="strada">
                 </mat-form-field>
-                <mat-form-field class="mat-card-input small-input" appearance="outline"
-                    *ngIf="checkSelectedDocs(['Impunere Primărie', 'Fișă Înmatriculare'])">
+                <mat-form-field class="mat-card-input small-input" appearance="outline" *ngIf="checkSelectedDocs([
+                    'impunere-primarie', 
+                    'fisa-inmatriculare',
+                    'radiere-primarie',
+                    'certificat-tva',
+                    'certificat-radiere',
+                    'cerere-spcrciv',
+                    'declaratie-numere',
+                    'procura-delegatie'])">
                     <mat-label>Nr</mat-label>
                     <input matInput placeholder="Nr" formControlName="numar" (keypress)="onlyNumbers($event)">
                 </mat-form-field>
-                <mat-form-field class="mat-card-input small-input" appearance="outline"
-                    *ngIf="checkSelectedDocs(['Impunere Primărie', 'Fișă Înmatriculare'])">
+                <mat-form-field class="mat-card-input small-input" appearance="outline" *ngIf="checkSelectedDocs([
+                    'impunere-primarie',
+                    'fisa-inmatriculare',
+                    'radiere-primarie',
+                    'certificat-tva',
+                    'certificat-radiere',
+                    'cerere-spcrciv',
+                    'declaratie-numere',
+                    'procura-delegatie'])">
                     <mat-label>Bl</mat-label>
                     <input matInput placeholder="Bl" formControlName="bloc">
                 </mat-form-field>
-                <mat-form-field class="mat-card-input small-input" appearance="outline"
-                    *ngIf="checkSelectedDocs(['Impunere Primărie', 'Fișă Înmatriculare'])">
+                <mat-form-field class="mat-card-input small-input" appearance="outline" *ngIf="checkSelectedDocs([
+                    'impunere-primarie', 
+                    'fisa-inmatriculare',
+                    'radiere-primarie',
+                    'certificat-tva',
+                    'certificat-radiere',
+                    'cerere-spcrciv',
+                    'declaratie-numere',
+                    'procura-delegatie'])">
                     <mat-label>Sc</mat-label>
                     <input matInput placeholder="Sc" formControlName="scara">
                 </mat-form-field>
-                <mat-form-field class="mat-card-input small-input" appearance="outline"
-                    *ngIf="checkSelectedDocs(['Impunere Primărie', 'Fișă Înmatriculare'])">
+                <mat-form-field class="mat-card-input small-input" appearance="outline" *ngIf="checkSelectedDocs([
+                    'impunere-primarie', 
+                    'fisa-inmatriculare',
+                    'radiere-primarie',
+                    'certificat-tva',
+                    'certificat-radiere',
+                    'cerere-spcrciv',
+                    'declaratie-numere',
+                    'procura-delegatie'])">
                     <mat-label>Et</mat-label>
                     <input matInput placeholder="Et" formControlName="etaj" (keypress)="onlyNumbers($event)">
                 </mat-form-field>
-                <mat-form-field class="mat-card-input small-input" appearance="outline"
-                    *ngIf="checkSelectedDocs(['Impunere Primărie', 'Fișă Înmatriculare'])">
+                <mat-form-field class="mat-card-input small-input" appearance="outline" *ngIf="checkSelectedDocs([
+                    'impunere-primarie', 
+                    'fisa-inmatriculare',
+                    'radiere-primarie',
+                    'certificat-tva',
+                    'certificat-radiere',
+                    'cerere-spcrciv',
+                    'declaratie-numere',
+                    'procura-delegatie'])">
                     <mat-label>Ap</mat-label>
                     <input matInput placeholder="Ap" formControlName="apartament" (keypress)="onlyNumbers($event)">
                 </mat-form-field>
             </div>
             <div class="buletin" formGroupName="buletin">
-                <mat-form-field class="mat-card-input" appearance="outline"
-                    *ngIf="checkSelectedDocs(['Impunere Primărie', 'Fișă Înmatriculare'])">
+                <mat-form-field class="mat-card-input" appearance="outline" *ngIf="checkSelectedDocs([
+                'impunere-primarie', 
+                'fisa-inmatriculare',
+                'certificat-tva',
+                'cerere-spcrciv',
+                'declaratie-numere',
+                'procura-delegatie'])">
                     <mat-label>CNP / CUI</mat-label>
                     <input matInput formControlName="cnp" placeholder="CNP / CUI" (keypress)="onlyNumbers($event)">
                 </mat-form-field>
-                <mat-form-field class="mat-card-input medium-input" appearance="outline"
-                    *ngIf="checkSelectedDocs(['Impunere Primărie', 'Fișă Înmatriculare'])">
+                <mat-form-field class="mat-card-input medium-input" appearance="outline" *ngIf="checkSelectedDocs([
+                'impunere-primarie', 
+                'fisa-inmatriculare',
+                'certificat-tva',
+                'declaratie-numere',
+                'procura-delegatie'])">
                     <mat-label>Serie CI</mat-label>
                     <input matInput formControlName="serie" placeholder="Serie CI">
                 </mat-form-field>
-                <mat-form-field class="mat-card-input medium-input" appearance="outline"
-                    *ngIf="checkSelectedDocs(['Impunere Primărie', 'Fișă Înmatriculare'])">
+                <mat-form-field class="mat-card-input medium-input" appearance="outline" *ngIf="checkSelectedDocs([
+                'impunere-primarie',
+                'fisa-inmatriculare',
+                'certificat-tva',
+                'declaratie-numere',
+                'procura-delegatie'])">
                     <mat-label>Număr CI</mat-label>
                     <input matInput formControlName="numar" placeholder="Numar CI" (keypress)="onlyNumbers($event)">
                 </mat-form-field>
                 <mat-form-field class="mat-card-input" appearance="outline"
-                    *ngIf="checkSelectedDocs(['Impunere Primărie'])">
+                    *ngIf="checkSelectedDocs(['impunere-primarie','declaratie-numere','procura-delegatie'])">
                     <mat-label>Emis de</mat-label>
                     <input matInput formControlName="emisDe" placeholder="Emis de">
                 </mat-form-field>
                 <mat-form-field class="mat-card-input" appearance="outline"
-                    *ngIf="checkSelectedDocs(['Impunere Primărie'])">
+                    *ngIf="checkSelectedDocs(['impunere-primarie','declaratie-numere','procura-delegatie'])">
                     <mat-label>Dată emitere</mat-label>
                     <input matInput formControlName="dataEmitere" [matDatepicker]="dataEmitere">
                     <mat-datepicker-toggle matSuffix [for]="dataEmitere"></mat-datepicker-toggle>
                     <mat-datepicker #dataEmitere></mat-datepicker>
                 </mat-form-field>
                 <mat-form-field class="mat-card-input" appearance="outline"
-                    *ngIf="selectedDocs.includes('Fișă Înmatriculare')">
+                    *ngIf="selectedDocs.includes('fisa-inmatriculare')">
                     <mat-label>Dată naștere</mat-label>
                     <input matInput formControlName="dataNastere" [matDatepicker]="dataNastere">
                     <mat-datepicker-toggle matSuffix [for]="dataNastere"></mat-datepicker-toggle>
                     <mat-datepicker #dataNastere></mat-datepicker>
                 </mat-form-field>
                 <mat-form-field class="mat-card-input" appearance="outline"
-                    *ngIf="selectedDocs.includes('Fișă Înmatriculare')">
+                    *ngIf="selectedDocs.includes('fisa-inmatriculare')">
                     <mat-label>Loc naștere</mat-label>
                     <input matInput formControlName="locNastere" placeholder="Loc nastere">
                 </mat-form-field>

@@ -3,18 +3,137 @@
 </h1>
 <hr>
 <mat-dialog-content>
-    <mat-card class="card-content">
-        <div>
-            Imputernicire Primarie
-            <mat-form-field class="m10-l nr-input">
-                <mat-label>Nr</mat-label>
-                <mat-select>
-                    <mat-option *ngFor="let option of options" [value]="option">
-                        {{option}}
-                    </mat-option>
-                </mat-select>
-            </mat-form-field>
+    <mat-card class="card-content" *ngIf="checkSelectedDocs(['impunere-primarie', 'radiere-primarie'])">
+        <div class="doc-label">
+            Împuternicire Primărie
         </div>
+        <mat-form-field class="m10-l nr-input">
+            <mat-select [(value)]="docs.imputernicirePrimarie">
+                <mat-option *ngFor="let option of options" [value]="option">
+                    {{option}}
+                </mat-option>
+            </mat-select>
+        </mat-form-field>
+    </mat-card>
+    <mat-card class="card-content" *ngIf="checkSelectedDocs(['impunere-primarie'])">
+        <div class="doc-label">
+            Decizie Impunere
+        </div>
+        <mat-form-field class="m10-l nr-input">
+            <mat-select [(value)]="docs.decizieImpunere">
+                <mat-option *ngFor="let option of options" [value]="option">
+                    {{option}}
+                </mat-option>
+            </mat-select>
+        </mat-form-field>
+    </mat-card>
+    <mat-card class="card-content" *ngIf="checkSelectedDocs(['fisa-inmatriculare'])">
+        <div class="doc-label">
+            Fisă Înmatriculare
+        </div>
+        <mat-form-field class="m10-l nr-input">
+            <mat-select [(value)]="docs.fisaInmatriculare">
+                <mat-option *ngFor="let option of options" [value]="option">
+                    {{option}}
+                </mat-option>
+            </mat-select>
+        </mat-form-field>
+    </mat-card>
+    <mat-card class="card-content" *ngIf="checkSelectedDocs(['radiere-primarie'])">
+        <div class="doc-label">
+            Scoatere Din Evidentă Primărie
+        </div>
+        <mat-form-field class="m10-l nr-input">
+            <mat-select [(value)]="docs.scoatereDinEvidentaPrimarie">
+                <mat-option *ngFor="let option of options" [value]="option">
+                    {{option}}
+                </mat-option>
+            </mat-select>
+        </mat-form-field>
+    </mat-card>
+    <mat-card class="card-content" *ngIf="checkSelectedDocs(['certificat-tva'])">
+        <div class="doc-label">
+            Timbru Anaf
+        </div>
+        <mat-form-field class="m10-l nr-input">
+            <mat-select [(value)]="docs.timbruAnaf">
+                <mat-option *ngFor="let option of options" [value]="option">
+                    {{option}}
+                </mat-option>
+            </mat-select>
+        </mat-form-field>
+    </mat-card>
+    <mat-card class="card-content" *ngIf="checkSelectedDocs(['certificat-tva'])"> 
+        <div class="doc-label">
+            TVA Anaf
+        </div>
+        <mat-form-field class="m10-l nr-input">
+            <mat-select [(value)]="docs.tvaAnaf">
+                <mat-option *ngFor="let option of options" [value]="option">
+                    {{option}}
+                </mat-option>
+            </mat-select>
+        </mat-form-field>
+    </mat-card>
+    <mat-card class="card-content" *ngIf="checkSelectedDocs(['certificat-tva'])">
+        <div class="doc-label">
+            Împuternicire Anaf
+        </div>
+        <mat-form-field class="m10-l nr-input">
+            <mat-select [(value)]="docs.imputernicireAnaf">
+                <mat-option *ngFor="let option of options" [value]="option">
+                    {{option}}
+                </mat-option>
+            </mat-select>
+        </mat-form-field>
+    </mat-card>
+    <mat-card class="card-content" *ngIf="checkSelectedDocs(['cerere-spcrciv'])">
+        <div class="doc-label">
+            Înmatriculare
+        </div>
+        <mat-form-field class="m10-l nr-input">
+            <mat-select [(value)]="docs.inmatriculare">
+                <mat-option *ngFor="let option of options" [value]="option">
+                    {{option}}
+                </mat-option>
+            </mat-select>
+        </mat-form-field>
+    </mat-card>
+    <mat-card class="card-content" *ngIf="checkSelectedDocs(['certificat-radiere'])">
+        <div class="doc-label">
+            Certificat Radiere
+        </div>
+        <mat-form-field class="m10-l nr-input">
+            <mat-select [(value)]="docs.certificatRadiere">
+                <mat-option *ngFor="let option of options" [value]="option">
+                    {{option}}
+                </mat-option>
+            </mat-select>
+        </mat-form-field>
+    </mat-card>
+    <mat-card class="card-content" *ngIf="checkSelectedDocs(['declaratie-numere'])">
+        <div class="doc-label">
+            Declarație Platformă
+        </div>
+        <mat-form-field class="m10-l nr-input">
+            <mat-select [(value)]="docs.declaratiePlatforma">
+                <mat-option *ngFor="let option of options" [value]="option">
+                    {{option}}
+                </mat-option>
+            </mat-select>
+        </mat-form-field>
+    </mat-card>
+    <mat-card class="card-content" *ngIf="checkSelectedDocs(['procura-delegatie'])">
+        <div class="doc-label">
+            Delegație
+        </div>
+        <mat-form-field class="m10-l nr-input">
+            <mat-select [(value)]="docs.delegatie">
+                <mat-option *ngFor="let option of options" [value]="option">
+                    {{option}}
+                </mat-option>
+            </mat-select>
+        </mat-form-field>
     </mat-card>
 </mat-dialog-content>
 <mat-dialog-actions>

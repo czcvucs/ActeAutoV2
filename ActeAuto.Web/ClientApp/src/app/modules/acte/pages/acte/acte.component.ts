@@ -1,7 +1,7 @@
-import { Component, OnInit, AfterViewInit } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { MatDialog, MatDialogRef } from '@angular/material';
 import { ConfirmationDialogComponent, SelectedDocsService, SimpleSnackBarService, PrintDialogComponent } from 'src/app/modules/shared';
-import { FormGroup, FormControl, Validators } from '@angular/forms';
+import { FormGroup, FormControl } from '@angular/forms';
 
 @Component({
   selector: 'app-acte',
@@ -15,7 +15,8 @@ export class ActeComponent implements OnInit {
 
   constructor(
     private snackbar: SimpleSnackBarService,
-    public dialog: MatDialog
+    public dialog: MatDialog,
+    private selectedDocsService: SelectedDocsService
   ) { }
 
   ngOnInit() {
@@ -89,6 +90,19 @@ export class ActeComponent implements OnInit {
           dataNastere: new FormControl(''),
           locNastere: new FormControl(''),
         })
+      }),
+      documents: new FormGroup({
+        imputernicirePrimarie: new FormControl(''),
+        decizieImpunere: new FormControl(''),
+        fisaInmatriculare: new FormControl(''),
+        scoatereDinEvidentaPrimarie: new FormControl(''),
+        timbruAnaf: new FormControl(''),
+        tvaAnaf: new FormControl(''),
+        imputernicireAnaf: new FormControl(''),
+        inmatriculare: new FormControl(''),
+        certificatRadiere: new FormControl(''),
+        declaratiePlatforma: new FormControl(''),
+        delegatie: new FormControl('')
       })
     });
   }
@@ -97,11 +111,15 @@ export class ActeComponent implements OnInit {
     const dialogRef = this.dialog.open(PrintDialogComponent, {
       autoFocus: false
     });
-    if (this.printForm.valid) {
-      console.log(formValues);
-    } else {
-      this.snackbar.openError('Formularul este invalid');
-      console.log(formValues);
-    }
+    dialogRef.afterClosed().subscribe(result => {
+      console.log(result);
+    });
+    //   if (this.printForm.valid) {
+    //     console.log(formValues);
+    //   } else {
+    //     this.snackbar.openError('Formularul este invalid');
+    //     console.log(formValues);
+    //   }
+    // }
   }
 }

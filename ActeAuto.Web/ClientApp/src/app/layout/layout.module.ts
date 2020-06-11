@@ -12,6 +12,7 @@ import { WelcomeModule } from '../modules/welcome/welcome.module';
 import { CommonModule } from '@angular/common';
 import { ActeModule } from '../modules/acte/acte.module';
 import { FormsModule } from '@angular/forms';
+import { MatSelectModule } from '@angular/material';
 
 @NgModule({
   declarations: [
@@ -30,6 +31,7 @@ import { FormsModule } from '@angular/forms';
     LayoutRoutingModule,
     WelcomeModule,
     ActeModule,
+    MatSelectModule
   ],
   providers: [],
   bootstrap: []

@@ -27,10 +27,18 @@
     <mat-sidenav #snav [mode]="mobileQuery.matches ? 'over' : 'side'" [fixedInViewport]="mobileQuery.matches"
       fixedTopGap="56">
       <mat-selection-list #list [(ngModel)]="selectedOptions" (ngModelChange)="onNgModelChange()">
-        <mat-list-option *ngFor="let document of documents" [value]="document">
-          {{document}}
+        <mat-list-option *ngFor="let document of doc" [value]="document.value">
+          {{document.name}}
         </mat-list-option>
       </mat-selection-list>
+      <mat-form-field class="contracts">
+        <mat-label>Contract</mat-label>
+        <mat-select [(value)]="contract">
+            <mat-option *ngFor="let country of countries" [value]="country">
+                {{country}}
+            </mat-option>
+        </mat-select>
+    </mat-form-field>
     </mat-sidenav>
     <mat-sidenav-content>
       <router-outlet></router-outlet>

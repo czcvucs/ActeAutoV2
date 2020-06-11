@@ -1,5 +1,5 @@
 <app-unauthorized-layout>
-    <p>Loading...</p>
+    <div *ngIf="isLoading; else content">Loading...</div>
     <ng-template #content>
         <mat-toolbar class="m10-b" color="warn">Failed to login. Please contact support for assistance.</mat-toolbar>
         <div class="login-button" (click)="goToLogin()"> <span>Try again</span> </div>

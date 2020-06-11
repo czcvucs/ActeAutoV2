@@ -13,22 +13,25 @@ export class LayoutComponent implements OnInit, OnDestroy {
   mobileQuery: MediaQueryList;
 
   selectedOptions = [];
-  documents = [
-    'Impunere Primărie',
-    'Fișă Înmatriculare',
-    'Radiere primărie',
-    'Certificat T.V.A',
-    'Certificat radiere',
-    'Cerere S.P.C.R.C.I.V',
-    'Declarație Numere',
-    'Procură / Delegație',
-    'Traducere'];
+  doc = [
+    { value: 'impunere-primarie', name: 'Impunere Primărie' },
+    { value: 'fisa-inmatriculare', name: 'Fișă Înmatriculare' },
+    { value: 'radiere-primarie', name: 'Radiere primărie' },
+    { value: 'certificat-tva', name: 'Certificat T.V.A' },
+    { value: 'certificat-radiere', name: 'Certificat radiere' },
+    { value: 'cerere-spcrciv', name: 'Cerere S.P.C.R.C.I.V' },
+    { value: 'declaratie-numere', name: 'Declarație Numere' },
+    { value: 'procura-delegatie', name: 'Procură / Delegație' },
+    { value: 'traducere', name: 'Traducere' },
+  ];
+
+  contract: '';
   countries = [
+    '',
     'România',
     'Anglia',
     'Bulgaria',
     'Franta',
-    'România',
     'Italia',
     'Olanda'
   ];
